@@ -1,8 +1,8 @@
-FROM php:8.2-cli
+# استخدم صورة PHP مع Apache
+FROM php:8.1-apache
 
-WORKDIR /app
-COPY . /app
+# نسخ ملفات المشروع للمسار الرئيسي في الخادم
+COPY . /var/www/html/
 
-EXPOSE 8080
-
-CMD ["php", "-S", "0.0.0.0:8080"]
+# فتح منفذ 80
+EXPOSE 80
